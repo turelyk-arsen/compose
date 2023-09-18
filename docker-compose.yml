@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  web-server:
+    image: nginx:stable
+    container_name: mynginx
+    volumes:
+      - '/home/arsen/docker/compose:/var/www/html'
+      - '/home/arsen/docker/pic:/var/www/pic'
+      - 'config:/var/www/config'
+    ports:
+      - '8080:80'
+      - '443:443'
+    restart: unless-stopped
+volumes:
+  config:
+networks:
+  default:
+    driver: bridge
+    name: webnet

@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+LABEL author="arsen"
+LABEL platform="YouTube"
+RUN apt-get update
+RUN apt-get install nginx -y
+CMD [ "echo", "Hello my Docker" ]
